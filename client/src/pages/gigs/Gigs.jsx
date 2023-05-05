@@ -15,7 +15,7 @@ const Gigs = () => {
     const maxref = useRef();
 
     const { search } = useLocation()
-    // console.log(loaction)
+    const category = search.substring(5).toUpperCase();
 
     const reSort = (type) => {
         setSort(type)
@@ -41,9 +41,9 @@ const Gigs = () => {
     return (
         <div className="gigs">
             <div className="container">
-                <span className="breadcrumbs">LANCI > GRAPHICS & DESIGN > </span>
-                <h1>AI Artist</h1>
-                <p>Explore the boundaries of art and technology with Lanci's AI Artists</p>
+                <span className="breadcrumbs">LANCI > {category} > </span>
+                <h1>{category}</h1>
+                <p>Explore the boundaries of art and technology with Lanci's {category} Artists</p>
                 <div className="menu">
                     <div className="left">
                         <span>Budget</span>

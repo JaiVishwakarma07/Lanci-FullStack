@@ -3,6 +3,7 @@
     align-items: center;
     color: white;
     background-color: #1A1B1D;
+    // animation: changeBg 60s linear infinite;
     flex-direction: column;
     transition: 0.5s all ease;
     position: sticky;
@@ -99,5 +100,31 @@
         justify-content: space-between;
         font-weight: 300;
         color: gray;
+    }
+}
+
+@keyframes changeBg {
+    0% {
+        background-color: #1A1B1D;
+    }
+
+    20% {
+        background-color: #123272;
+    }
+
+    40% {
+        background-color: #00431A;
+    }
+
+    60% {
+        background-color: #862302;
+    }
+
+    80% {
+        background-color: #AF425B;
+    }
+
+    100% {
+        background-color: #5D1426;
     }
 }

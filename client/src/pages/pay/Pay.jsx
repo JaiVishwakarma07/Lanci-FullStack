@@ -33,11 +33,14 @@ const Pay = () => {
 
     return (
         <div className="pay">
-            {clientSecret && (
-                <Elements options={options} stripe={stripePromise}>
-                    <CheckoutForm />
-                </Elements>
-            )}
+            <div className="container">
+                <h1>Payment</h1>
+                {clientSecret && (
+                    <Elements options={options} stripe={stripePromise}>
+                        <CheckoutForm />
+                    </Elements>
+                )}
+            </div>
         </div>
     )
 }

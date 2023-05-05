@@ -28,6 +28,14 @@ const Messages = () => {
         mutation.mutate(id)
     }
 
+    //user
+    // const { isLoading: uLoading, data: uData } = useQuery({
+    //     queryKey: ["user"],
+    //     queryFn: () => newRequest.get(`/users/`).then((res) => {
+    //         return res.data
+    //     })
+    // })
+
     return (
         <div className="Messages">
             {isLoading ? "Looding" : error ? "Something went wrong" :
