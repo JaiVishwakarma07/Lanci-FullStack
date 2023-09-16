@@ -4,6 +4,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import newRequest from "../../utils/newRequest"
 import { Link } from "react-router-dom"
 import moment from "moment"
+import Box from "./Box";
 
 const Messages = () => {
 
@@ -29,9 +30,10 @@ const Messages = () => {
     }
 
     //user
+    // const id = currentUser.isSeller ? c.buyerId : c.sellerId
     // const { isLoading: uLoading, data: uData } = useQuery({
     //     queryKey: ["user"],
-    //     queryFn: () => newRequest.get(`/users/`).then((res) => {
+    //     queryFn: () => newRequest.get(`/users` + id).then((res) => {
     //         return res.data
     //     })
     // })
@@ -51,6 +53,7 @@ const Messages = () => {
                             <th>Action</th>
                         </tr>
                         {data.map((c) => (
+                            // <Box c={c} key={c.id} />
                             <tr key={c.id} className={((currentUser.isSeller && !c.readBySeller) || (!currentUser.isSeller && !c.readByBuyer)) &&
                                 ("active")}>
                                 <td>{currentUser.isSeller ? c.buyerId : c.sellerId}</td>

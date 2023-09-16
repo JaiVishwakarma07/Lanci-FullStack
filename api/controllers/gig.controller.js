@@ -1,4 +1,3 @@
-import gigModel from "../models/gig.model.js";
 import Gig from "../models/gig.model.js"
 import createError from "../utils/createError.js"
 

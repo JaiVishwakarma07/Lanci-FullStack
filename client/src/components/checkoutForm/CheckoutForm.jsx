@@ -8,6 +8,7 @@ import {
 import "./checkoutform.scss"
 
 const CheckoutForm = () => {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"))
     const stripe = useStripe();
     const elements = useElements();
 
@@ -79,7 +80,7 @@ const CheckoutForm = () => {
             <form id="payment-form" onSubmit={handleSubmit}>
                 <LinkAuthenticationElement
                     id="link-authentication-element"
-                    onChange={(e) => setEmail(e.target.value)}
+                    options={{ defaultValues: { email: currentUser.email } }}
                 />
                 <PaymentElement id="payment-element" options={paymentElementOptions} />
                 <button disabled={isLoading || !stripe || !elements} id="submit">
